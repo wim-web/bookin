@@ -1,0 +1,12 @@
+{
+    "type": "type",
+    "project_id": "project_id",
+    "private_key_id": "private_key_id",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEwAIBADANBgkqhkiG9w0BAQEFAASCBKowggSmAgEAAoIBAQC5qPZ2HwBcc+dk\nUIj8fzymeQnVRTbcGJFHvrfc+JwHcQ5+/tuu8lKxKu6xUAAUE1wSqent4bcbG0zM\n1vAgEHd8kJLcucmXDcdeuSi+DAPVC8dk0RFvGlFQU6agpXZWm4I27CGOc3LZaIQ5\nIup72/vTv0iQ6xxiDLFTWF1eh5lZNqneDGiZIOnx7gLOmu1C4sMS2NaXGZAuhCJ3\nbm25MvTNUF3IvEBRCTawUhhf/zDDfkDaeMGSmsMsT6hd+ybl2/wU88byWBPja7yN\nkJYcO3EUFyMaxKS0IEsx65pMtD7fvvz7oZHdbroufVr5XquL7YiiXeoWPp70JchL\nXQU/LcLFAgMBAAECggEBALRoZg3D9DLigY/t3h8VeJb/eLmfxz46NTn1Lm7vuZZV\nmtN2zXwDhq0X3de4uErJwSd1qpX4Rlh1v7wwhCd0ONd3GO6ZLjW1Mu1tmRSLUlH8\nXyYtLfa7KRaYIotqHULtW6wI6lalAo4WTJ3EuvveeKd68YW4oNz6HnmxnREVTMLt\nfIahaHV42so7GMevL6HaE+SZ3zJ3+mgNAGlTSOdmTGcEgtlU+LrCw7gTN/B6EtD7\nCuEyGfIzVqEOE6eYQlM5pKt0iuDwCL0mXUDbJf7uC0yvNpGquA/9Q5NCo4Nhbo+Q\npwu8ajRHG4Ru3cjG3HmNHYR/OA7dzAqb8nmF/emncSUCgYEA8IinpSsPi7oIDs0z\n5WTHRWwMINKcojE9kFpaoGwSOu3WbkG2YDITfAoSvVEiQ7H4+p0bKn1PQKMh3C5l\n63gnWJCXZsfGCjXzwno4wmQKH7H5vj/oxK62y7HDg6DgatDUxVeVXAFOaPOm7lal\nFckw5EDoVjbOBqRbANzPGmhPcRsCgYEAxZkMib2d2c9nt0Dhik8+s8blQ7OA0DnP\nU4a50cCpzUOEI4N4VpKdYKgDMZLklTJtnBaFcWhI7gfdEidbybYatnZlEsoDNi9x\nrAlAYSXPushLfUCS04tk+S9rerDGtB22GtMULJAkABgC9cfGHCs1PkGki0Yc6rfe\nHlUYKhLuuZ8CgYEAw6EBaI5rKGN3ZkJzMOEUSVwlSRTCnA+cWKmEB/GdqhwCSM5d\nPEO+ISY4M42nZpN7QqlAjQA50wJa6a866ZZhueBvowJcCbXzuXqaa0/eBAVGb/ue\nn0jSFz1PHOFdZMLQKmifa6MMWMPCQxppThzCDQLVdDlCu5g1A7CTKJEp+30CgYEA\ntMCyNXXc5ZfSelHBfzHKW82/f1S+qruXKgL+DB+/tGLkh1AGTrtDd115vmlu7AP7\nPGNloj4RKJzM34RddIE+olZfUva0RWbVBthXqgZapbP/Sg49wYGr1j5IhS0cNztO\nj+8ybylTpTpRyt76HF5yEAcgK77xSMz1RK32stYqxmUCgYEAiOK+yEJpwktgEU3m\n3pPNT0Bfg5JGDxfqmHWEwkMLfAWGkrCkBLtAs7iidoH33zx1Wiber86PZP0yWmNi\nINuaqBDBqWqX9QTKrX/lYgVRI4VC7cAPMXXCMEMSJfiiAHYaMIl9IhNpSVzjAWyL\ngjh02bVNtq+YuJmqULPFvaDi/20=\n-----END PRIVATE KEY-----",
+    "client_email": "client_email",
+    "client_id": "client_id",
+    "auth_uri": "auth_uri",
+    "token_uri": "token_uri",
+    "auth_provider_x509_cert_url": "auth_provider_x509_cert_url",
+    "client_x509_cert_url": "client_x509_cert_url"
+}

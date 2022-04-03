@@ -145,3 +145,79 @@ pub mod twolo {
         }
     }
 }
+
+pub mod drive {
+    use reqwest::Client as reqwest_c;
+    use reqwest::Result;
+    use serde::Deserialize;
+
+    pub struct Client {
+        token: String,
+        base_uri: String,
+        client: reqwest_c,
+    }
+
+    impl Client {
+        pub fn new(access_token: String) -> Self {
+            Self {
+                token: access_token,
+                base_uri: "https://www.googleapis.com/drive/v3".to_string(),
+                client: reqwest_c::new(),
+            }
+        }
+
+        pub async fn files(&self, token: String) -> Result<FilesResponse> {
+            let res = self
+                .client
+                .get(format!("{}/files", self.base_uri))
+                .query(&[
+                    ("access_token", &self.token),
+                    (
+                        "fields",
+                        &"kind,nextPageToken,incompleteSearch,files(id,kind,name,webContentLink,webViewLink,thumbnailLink,mimeType,createdTime,modifiedTime,fileExtension)".to_string(),
+                    ),
+                    ("q", &"mimeType=\"application/epub%2Bzip\" or mimeType=\"application/pdf\"".to_string()),
+                    ("pageToken", &token)
+                ])
+                .send()
+                .await?
+                .json::<FilesResponse>()
+                .await?;
+
+            Ok(res)
+        }
+    }
+
+    #[derive(Debug, Deserialize)]
+    pub struct FilesResponse {
+        kind: String,
+        #[serde(rename = "incompleteSearch")]
+        incomplete_search: bool,
+        #[serde(rename = "nextPageToken")]
+        pub next_page_token: Option<String>,
+        pub files: Files,
+    }
+
+    pub type Files = Vec<File>;
+
+    #[derive(Debug, Deserialize)]
+    pub struct File {
+        kind: String,
+        id: String,
+        name: String,
+        #[serde(rename = "webContentLink")]
+        download_link: Option<String>,
+        #[serde(rename = "webViewLink")]
+        link: String,
+        #[serde(rename = "thumbnailLink")]
+        thumbnail_link: Option<String>,
+        #[serde(rename = "mimeType")]
+        mime_type: String,
+        #[serde(rename = "createdTime")]
+        created_time: String,
+        #[serde(rename = "modifiedTime")]
+        modified_time: String,
+        #[serde(rename = "fileExtension")]
+        file_extension: Option<String>,
+    }
+}

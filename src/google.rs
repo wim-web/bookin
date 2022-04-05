@@ -166,7 +166,7 @@ pub mod drive {
             }
         }
 
-        pub async fn files(&self, token: String) -> Result<FilesResponse> {
+        pub async fn files(&self, page_token: String, query: String) -> Result<FilesResponse> {
             let res = self
                 .client
                 .get(format!("{}/files", self.base_uri))
@@ -176,8 +176,8 @@ pub mod drive {
                         "fields",
                         &"kind,nextPageToken,incompleteSearch,files(id,kind,name,webContentLink,webViewLink,thumbnailLink,mimeType,createdTime,modifiedTime,fileExtension)".to_string(),
                     ),
-                    ("q", &"mimeType=\"application/epub%2Bzip\" or mimeType=\"application/pdf\"".to_string()),
-                    ("pageToken", &token)
+                    ("q", &query),
+                    ("pageToken", &page_token)
                 ])
                 .send()
                 .await?
@@ -202,22 +202,22 @@ pub mod drive {
 
     #[derive(Debug, Deserialize)]
     pub struct File {
-        kind: String,
-        id: String,
-        name: String,
+        pub kind: String,
+        pub id: String,
+        pub name: String,
         #[serde(rename = "webContentLink")]
-        download_link: Option<String>,
+        pub download_link: Option<String>,
         #[serde(rename = "webViewLink")]
-        link: String,
+        pub link: String,
         #[serde(rename = "thumbnailLink")]
-        thumbnail_link: Option<String>,
+        pub thumbnail_link: Option<String>,
         #[serde(rename = "mimeType")]
-        mime_type: String,
+        pub mime_type: String,
         #[serde(rename = "createdTime")]
-        created_time: String,
+        pub created_time: String,
         #[serde(rename = "modifiedTime")]
-        modified_time: String,
+        pub modified_time: String,
         #[serde(rename = "fileExtension")]
-        file_extension: Option<String>,
+        pub file_extension: Option<String>,
     }
 }

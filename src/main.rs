@@ -35,7 +35,7 @@ async fn main() {
     let mut files: Vec<drive::File> = vec![];
 
     let query = format!(
-        "mimeType=\"application/epub+zip\" or mimeType=\"application/pdf\" and modifiedTime > \"{}\" and '1-W-3eX-gUZU_KAQmCI5SRHItetJUQRHk' in parents ",
+        "(mimeType=\"application/epub+zip\" or mimeType=\"application/pdf\") and modifiedTime > \"{}\" and '1-W-3eX-gUZU_KAQmCI5SRHItetJUQRHk' in parents ",
         latest.results[0].created_time
     );
 

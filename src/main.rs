@@ -34,9 +34,12 @@ async fn main() {
 
     let mut files: Vec<drive::File> = vec![];
 
+    let pdf_folder_id = "1UuI8PxAJWn93e-Y9NqFK4MEFAJErkbod";
+
     let query = format!(
-        "(mimeType=\"application/epub+zip\" or mimeType=\"application/pdf\") and modifiedTime > \"{}\" and '1-W-3eX-gUZU_KAQmCI5SRHItetJUQRHk' in parents ",
-        latest.results[0].created_time
+        "(mimeType=\"application/epub+zip\" or mimeType=\"application/pdf\") and modifiedTime > \"{}\" and '{}' in parents ",
+        latest.results[0].created_time,
+        pdf_folder_id
     );
 
     let mut r = google_drive
